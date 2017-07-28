@@ -4,42 +4,36 @@ using UnityEngine;
 
 public class SE_TabletTouch : MonoBehaviour {
 
-    [SerializeField] private UnityEngine.UI.Text InputField;
+    [SerializeField] private UnityEngine.UI.Text m_inputField;
 
-    [SerializeField] private string passcode;
+    [SerializeField] private string m_passcode = "1234";
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 
     void OnTriggerEnter(Collider other) {
-        if (other.tag == "TabletKeypad") {
-            int entered = (int.Parse(other.gameObject.name) + 1);
-            Debug.Log("You Pressed Keypad" + (int.Parse(other.gameObject.name) + 1));  
-            
-            if(entered == 10) {
-                InputField.text = "";
-            } else if(entered == 11) {
-                if(InputField.text == "1234") {
-                    InputField.text = "success";
-                } else {
-                    InputField.text = "nope";
-
+        switch (SE_TabletScreenState.GetCurState()) {
+            case SE_TabletScreenState.eScreenState.LOCK_SCREEN: {
+                    if(other.tag == "TabletKeypad") {
+                        SE_LockScreen lockScreen = other.transform.parent.parent.GetComponent<SE_LockScreen>();
+                        lockScreen.UpdateLockScreen(other, "TabletKeypad");
+                    }
+                    break;
+            }
+            case SE_TabletScreenState.eScreenState.HOME_SCREEN: {
+                    if (other.tag == "CameraApp" || other.tag == "NotesApp") {
+                        SE_HomeScreen homeScreen = other.transform.parent.GetComponent<SE_HomeScreen>();
+                        homeScreen.UpdateHomeScreen(other, "NotesApp", "CameraApp");
+                    }
+                    break;
                 }
-            } else {
-                InputField.text += entered.ToString();
-            }      
+            case SE_TabletScreenState.eScreenState.CAMERA_APP: break;
+            case SE_TabletScreenState.eScreenState.NOTES_APP: break;
         }
+        
     } 
 
     public void SetupInputField()
     {
-        InputField = GameObject.Find("Input").GetComponent<UnityEngine.UI.Text>();
+        m_inputField = GameObject.Find("Input").GetComponent<UnityEngine.UI.Text>();
     }
+    
 }

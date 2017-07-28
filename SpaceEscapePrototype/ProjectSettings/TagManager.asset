@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - TabletKeypad
+  - CameraApp
+  - NotesApp
   layers:
   - Default
   - TransparentFX
