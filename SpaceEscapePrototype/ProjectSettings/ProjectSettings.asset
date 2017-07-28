@@ -473,7 +473,7 @@ PlayerSettings:
   XboxOnePersistentLocalStorageSize: 0
   vrEditorSettings: {}
   cloudServicesEnabled:
-    Collab: 1
+    Collab: 0
     UNet: 1
   cloudProjectId: dc4e25ec-7b83-4ec9-9898-57d2b9670dc7
   projectName: UnityVR
