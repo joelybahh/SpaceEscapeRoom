@@ -68,6 +68,9 @@ namespace NewtonVR
                 Debug.LogError("[NewtonVR] Error: Physical colliders on hand not setup properly.");
             }
 
+            SE_TabletTouch tRef = PhysicalController.AddComponent<SE_TabletTouch>();
+            tRef.SetupInputField();
+
             Rigidbody = PhysicalController.GetComponent<Rigidbody>();
             Rigidbody.isKinematic = false;
             Rigidbody.maxAngularVelocity = float.MaxValue;

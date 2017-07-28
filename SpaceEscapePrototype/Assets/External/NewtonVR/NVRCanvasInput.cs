@@ -106,7 +106,8 @@ namespace NewtonVR
             ControllerCamera.clearFlags = CameraClearFlags.Nothing;
             ControllerCamera.cullingMask = 0; // 1 << LayerMask.NameToLayer("UI"); 
             ControllerCamera.stereoTargetEye = StereoTargetEyeMask.None;
-
+            ControllerCamera.nearClipPlane = 0.01f;
+            ControllerCamera.farClipPlane = 0.02f;
             Canvas[] canvases = GameObject.FindObjectsOfType<Canvas>();
             foreach (Canvas canvas in canvases)
             {
@@ -168,26 +169,27 @@ namespace NewtonVR
 
                     bool blockedByGeometry = false;
 
-                    if (GeometryBlocksLaser == true)
-                    {
-                        blockedByGeometry = Physics.Raycast(origin, direction, distance, LayersThatBlockLaser);
-                    }
-
-                    if (blockedByGeometry == false)
-                    {
-                        cursorState = true;
-
-                        Cursors[index].position = globalLookPos;
-                        Cursors[index].rotation = draggingPlane.rotation;
-                        Cursors[index].localScale = Vector3.one * (NormalCursorScale / 100);
-
-                        if (LaserEnabled == true)
+                    //if(distance < 0.25f) {
+                        if (GeometryBlocksLaser == true)
                         {
-                            Lasers[index].enabled = true;
-                            Lasers[index].SetPositions(new Vector3[] { origin, endPoint });
+                            blockedByGeometry = Physics.Raycast(origin, direction, distance, LayersThatBlockLaser);
                         }
-                    }
 
+                        if (blockedByGeometry == false)
+                        {
+                            cursorState = true;
+
+                            Cursors[index].position = globalLookPos;
+                            Cursors[index].rotation = draggingPlane.rotation;
+                            Cursors[index].localScale = Vector3.one * (NormalCursorScale / 100);
+
+                            if (LaserEnabled == true)
+                            {
+                                Lasers[index].enabled = true;
+                                Lasers[index].SetPositions(new Vector3[] { origin, endPoint });
+                            }
+                        }   
+                    //}
                 }
             }
 
