@@ -1933,7 +1933,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 433302, guid: 5c5c2eaab005afe40b5d7a9cb6aa2b72, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2307870, guid: 5c5c2eaab005afe40b5d7a9cb6aa2b72, type: 2}
       propertyPath: m_Materials.Array.data[0]
@@ -3186,6 +3186,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InputField: {fileID: 333738455}
+  passcode: 
 --- !u!1 &524360394
 GameObject:
   m_ObjectHideFlags: 0
@@ -10745,7 +10746,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 433302, guid: 5c5c2eaab005afe40b5d7a9cb6aa2b72, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2307870, guid: 5c5c2eaab005afe40b5d7a9cb6aa2b72, type: 2}
       propertyPath: m_Materials.Array.data[0]
@@ -16863,15 +16864,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 433302, guid: 5c5c2eaab005afe40b5d7a9cb6aa2b72, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.084
+      value: -7.822
       objectReference: {fileID: 0}
     - target: {fileID: 433302, guid: 5c5c2eaab005afe40b5d7a9cb6aa2b72, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 6.05
       objectReference: {fileID: 0}
     - target: {fileID: 433302, guid: 5c5c2eaab005afe40b5d7a9cb6aa2b72, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0.19
+      value: -5.03
       objectReference: {fileID: 0}
     - target: {fileID: 433302, guid: 5c5c2eaab005afe40b5d7a9cb6aa2b72, type: 2}
       propertyPath: m_LocalRotation.x

@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/External/NewtonVR/Example/NVRExampleScene.unity
-  isLoaded: 1
-  isActive: 1
