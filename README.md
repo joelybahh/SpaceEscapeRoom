@@ -11,5 +11,5 @@ A VR game where the player must solve puzzles using a variety of tools at his di
   - Matthew Jones - (Programmer)
 # Helpful links
 
-**Link to [TDD]**(https://docs.google.com/document/d/13E69RyqYCsYZFUNnQsLJTHgSLAQ4iQvimqMF6bHQwQw/edit?usp=sharing)
+**Link to [TDD](https://docs.google.com/document/d/13E69RyqYCsYZFUNnQsLJTHgSLAQ4iQvimqMF6bHQwQw/edit?usp=sharing)**
 **Link to GDD**
