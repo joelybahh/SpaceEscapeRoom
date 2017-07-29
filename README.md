@@ -1,4 +1,4 @@
-# SpaceEscapeRoom
+# Space Escape Room VR Overview
 A VR game where the player must solve puzzles using a variety of tools at his disposal, in order to repair a damaged space ship and reactivate the life support which in turn, restores the oxygen levels, saving your life.
 
 # Meet the Development Team
@@ -9,6 +9,7 @@ A VR game where the player must solve puzzles using a variety of tools at his di
   - Aaron Watson - (Artist)
   - Joel Gabriel - (Lead Programmer)
   - Matthew Jones - (Programmer)
-  
-# Link to TDD: https://docs.google.com/document/d/13E69RyqYCsYZFUNnQsLJTHgSLAQ4iQvimqMF6bHQwQw/edit?usp=sharing
-# Link to GDD: 
+# Helpful links
+
+**Link to [TDD]**(https://docs.google.com/document/d/13E69RyqYCsYZFUNnQsLJTHgSLAQ4iQvimqMF6bHQwQw/edit?usp=sharing)
+**Link to GDD**
