@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class SE_Announcer : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+    private Queue<SE_Announcement>  m_announcements;
+    
+    void Start () {
+        m_announcements = new Queue<SE_Announcement>();
 	}
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	public void AddAnnouncementToQueue(SE_Announcement a_announcement) {
+        m_announcements.Enqueue(a_announcement);
+    }
+
+    public void PlayEventAnnouncement() {
+        //AddAnnouncementToQueue();
+    }
 }

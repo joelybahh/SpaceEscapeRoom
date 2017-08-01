@@ -3,14 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SE_Announcement : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    [SerializeField] private float m_minutes;
+    [SerializeField] private float m_seconds;
+    [SerializeField] private AudioClip m_announcmentAudio;  
 }
