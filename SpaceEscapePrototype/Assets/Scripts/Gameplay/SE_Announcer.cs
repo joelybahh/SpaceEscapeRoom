@@ -6,8 +6,8 @@ using UnityEngine;
 [RequireComponent(typeof(SE_OxygenTimer))]
 public class SE_Announcer : MonoBehaviour {
 
-    [SerializeField] private List<SE_Announcement>  m_announcements;
-    private Queue<SE_Announcement>  m_announcementsQ;
+    [SerializeField] private List<SE_Announcement>  m_timedAnnouncements;
+    private Queue<SE_Announcement>  m_curAnnouncementsQ;
 
     private SE_OxygenTimer m_o2Timer;
     private AudioSource m_audioSource;
@@ -15,28 +15,35 @@ public class SE_Announcer : MonoBehaviour {
     void Start () {
         m_o2Timer = GetComponent<SE_OxygenTimer>();
         m_audioSource = GetComponent<AudioSource>();
-        m_announcements = new Queue<SE_Announcement>();
+        m_timedAnnouncements = new Queue<SE_Announcement>();
 	}
 	
     void Update() {
-        for(int i = 0; i < m_announcements; i++) {
-            if ( m_announcements[i].Minutes == m_o2Timer.m_o2Clock.Minutes) {
-                if ( m_announcements[i].Seconds == m_o2Timer.m_o2Clock.Seconds ) {
-                    m_announcementsQ.Enqueue(m_announcements[i]);
+
+        // loop through all the timed announcements
+        for(int i = 0; i < m_timedAnnouncements; i++) {
+            // if both the clock, and the current timed events minutes are the same
+            if ( (int)m_timedAnnouncements[i].Minutes == (int)m_o2Timer.m_o2Clock.Minutes) {
+                // check if the seconds are also the same
+                if ( (int)m_timedAnnouncements[i].Seconds == (int)m_o2Timer.m_o2Clock.Seconds ) {
+                    // if so add it to the queue
+                    m_curAnnouncementsQ.Enqueue(m_timedAnnouncements[i]);
                 }
             }
         }
 
-        if(m_announcementsQ.Count > 0 ) {
-            SE_Announcement toPlay = m_announcementsQ.Dequeue();
-            m_audioSource.PlayOneShot(toPlay.m_announcmentAudio);
+        if(m_curAnnouncementsQ.Count > 0 ) {
+            PlayAnouncement();
         }
     }
 
-    private void PlayAnouncement;
+    private void PlayAnouncement() {
+        SE_Announcement toPlay = m_curAnnouncementsQ.Dequeue();
+        m_audioSource.PlayOneShot(toPlay.m_announcmentAudio);
+    }
 
 	public void AddAnnouncementToQueue(SE_Announcement a_announcement) {
-        m_announcements.Enqueue(a_announcement);
+        m_timedAnnouncements.Enqueue(a_announcement);
     }
 
     public void PlayEventAnnouncement() {
