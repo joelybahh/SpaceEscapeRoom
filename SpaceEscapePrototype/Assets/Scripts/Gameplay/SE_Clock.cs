@@ -16,8 +16,8 @@ public class SE_Clock {
         get { return m_seconds; }
     }
 
-    public float HasFinished {
-        get { return m_seconds; }
+    public bool HasFinished {
+        get { return m_hasFinished; }
     }
 
     public SE_Clock(float a_minutes) {

@@ -12,7 +12,7 @@ public class SE_OxygenTimer : MonoBehaviour {
     [SerializeField] private Text m_minT;
     [SerializeField] private Text m_secT;
 
-    private SE_Clock m_o2Clock;
+    public SE_Clock m_o2Clock;
 
 	void Start() {
         m_o2Clock = new SE_Clock(m_minutesUntilZero);
