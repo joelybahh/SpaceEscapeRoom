@@ -7,6 +7,9 @@ TagManager:
   - TabletKeypad
   - CameraApp
   - NotesApp
+  - HomeScreen
+  - SwapCamera
+  - TakePhoto
   layers:
   - Default
   - TransparentFX
