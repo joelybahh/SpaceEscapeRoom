@@ -7,6 +7,7 @@ using UnityEngine;
 public class SE_Announcer : MonoBehaviour {
 
     [SerializeField] private List<SE_Announcement>  m_timedAnnouncements;
+
     private Queue<SE_Announcement>  m_curAnnouncementsQ;
 
     private SE_OxygenTimer m_o2Timer;
