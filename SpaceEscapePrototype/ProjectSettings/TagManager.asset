@@ -10,6 +10,7 @@ TagManager:
   - HomeScreen
   - SwapCamera
   - TakePhoto
+  - EyeKey
   layers:
   - Default
   - TransparentFX

@@ -9,4 +9,14 @@ public class SE_PuzzleEyeScanner : SE_PuzzleEvent {
         m_completed = true;
     }
 
+    private void Update( ) {
+        Debug.Log("sdashkfnaskd");
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        Debug.Log("entered " + other.name);
+        if(other.tag == "EyeKey" ) {
+            CompleteEvent();
+        }
+    }
 }
