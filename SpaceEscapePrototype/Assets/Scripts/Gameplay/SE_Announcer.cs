@@ -11,6 +11,7 @@ public class SE_Announcer : MonoBehaviour {
 
     private SE_OxygenTimer m_o2Timer;
     private AudioSource m_audioSource;
+    private bool m_isPlayingAnnouncement;
 
     void Start () {
         m_o2Timer = GetComponent<SE_OxygenTimer>();
@@ -20,19 +21,23 @@ public class SE_Announcer : MonoBehaviour {
 	
     void Update() {
 
+        if ( m_audioSource.isPlaying ) m_isPlayingAnnouncement = true;
+        else m_isPlayingAnnouncement = false;
+
         // loop through all the timed announcements
-        for(int i = 0; i < m_timedAnnouncements; i++) {
+        for (int i = 0; i < m_timedAnnouncements; i++) {
             // if both the clock, and the current timed events minutes are the same
             if ( (int)m_timedAnnouncements[i].Minutes == (int)m_o2Timer.m_o2Clock.Minutes) {
                 // check if the seconds are also the same
                 if ( (int)m_timedAnnouncements[i].Seconds == (int)m_o2Timer.m_o2Clock.Seconds ) {
                     // if so add it to the queue
-                    m_curAnnouncementsQ.Enqueue(m_timedAnnouncements[i]);
+                    AddAnnouncementToQueue(m_timedAnnouncements[i]);
                 }
             }
         }
 
-        if(m_curAnnouncementsQ.Count > 0 ) {
+        // if there is an announcement in the queue, play it
+        if(m_curAnnouncementsQ.Count > 0  && !m_isPlayingAnnouncement ) {
             PlayAnouncement();
         }
     }
@@ -44,9 +49,5 @@ public class SE_Announcer : MonoBehaviour {
 
 	public void AddAnnouncementToQueue(SE_Announcement a_announcement) {
         m_timedAnnouncements.Enqueue(a_announcement);
-    }
-
-    public void PlayEventAnnouncement() {
-        //AddAnnouncementToQueue();
     }
 }
