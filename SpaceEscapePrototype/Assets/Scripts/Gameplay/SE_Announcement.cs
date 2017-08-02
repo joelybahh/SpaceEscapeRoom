@@ -3,7 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class SE_Announcement : MonoBehaviour {
+[System.Serializable]
+public class SE_Announcement {
+
+    public SE_Announcement() {
+        m_minutes = 0;
+        m_seconds = 0;
+        m_announcmentAudio = null;
+    }
+
+    public SE_Announcement(AudioClip a_announcmentAudio) {
+        m_minutes = 0;
+        m_seconds = 0;
+        m_announcmentAudio = a_announcmentAudio;
+    }
+
     [Header("Time to trigger announcement")]
     [SerializeField] private float m_minutes;
     [SerializeField] private float m_seconds;

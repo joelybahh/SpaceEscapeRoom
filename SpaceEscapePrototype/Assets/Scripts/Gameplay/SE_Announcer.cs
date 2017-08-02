@@ -51,4 +51,9 @@ public class SE_Announcer : MonoBehaviour {
     public void AddAnnouncementToQueue(SE_Announcement a_announcement) {
         m_curAnnouncementsQ.Enqueue(a_announcement);
     }
+
+    public void AddAnnouncementToQueue(AudioClip a_announcement) {
+        SE_Announcement announcement = new SE_Announcement(a_announcement);
+        m_curAnnouncementsQ.Enqueue(announcement);
+    }
 }
