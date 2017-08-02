@@ -60,7 +60,7 @@ public class SE_CameraScreen : MonoBehaviour {
 
         yield return new WaitForEndOfFrame();
 
-  
+
         //RenderTexture rt = new RenderTexture(Screen.width, Screen.height, 24);
         //m_activeCamera.targetTexture = rt;
         //m_activeCamera.Render();
@@ -68,7 +68,7 @@ public class SE_CameraScreen : MonoBehaviour {
 
 
 
-
+        RenderTexture.active = m_activeRendText;
         Texture2D photoText = new Texture2D(m_activeRendText.width, m_activeRendText.height, TextureFormat.RGB24, false);
         photoText.ReadPixels(new Rect(0, 0, m_activeRendText.width, m_activeRendText.height), 0, 0);
         photoText.Apply();
