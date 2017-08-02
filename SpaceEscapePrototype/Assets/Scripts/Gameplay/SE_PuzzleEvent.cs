@@ -8,10 +8,7 @@ public class SE_PuzzleEvent : MonoBehaviour {
 
     [SerializeField] protected bool m_completed = false;
     [SerializeField] UnityEvent m_onCompleteEvent;
-
-    [SerializeField]
-    protected bool m_completed = false;
-    AudioClip Announcement
+    AudioClip Announcement;
 
     public bool Completed
     {
