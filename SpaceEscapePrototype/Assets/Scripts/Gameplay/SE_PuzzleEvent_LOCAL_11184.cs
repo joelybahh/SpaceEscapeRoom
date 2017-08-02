@@ -5,10 +5,8 @@ using UnityEngine.Events;
 
 public class SE_PuzzleEvent : MonoBehaviour {
 
-
     [SerializeField] protected bool m_completed = false;
     [SerializeField] UnityEvent m_onCompleteEvent;
-    AudioClip Announcement;
 
     public bool Completed
     {
