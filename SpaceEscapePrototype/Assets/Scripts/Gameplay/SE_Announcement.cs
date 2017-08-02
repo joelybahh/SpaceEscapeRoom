@@ -5,11 +5,11 @@ using UnityEngine.Events;
 
 public class SE_Announcement : MonoBehaviour {
     [Header("Time to trigger announcement")]
-    [SerializeField] private float m_minutes;
-    [SerializeField] private float m_seconds;
+    [SerializeField] public float m_minutes;
+    [SerializeField] public float m_seconds;
 
     [Header("Announcement to play")]
-    [SerializeField] private AudioClip m_announcmentAudio;
+    [SerializeField] public AudioClip m_announcmentAudio;
 
     [Header("Announcement Events")]
     [SerializeField]

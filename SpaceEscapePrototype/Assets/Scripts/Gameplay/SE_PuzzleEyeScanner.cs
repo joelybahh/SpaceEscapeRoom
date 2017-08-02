@@ -3,18 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SE_PuzzleEyeScanner : SE_PuzzleEvent {
-
+    [SerializeField]
+    ParticleSystem eyeScanner;
+    AudioClip Announcement;
+    bool hasCompleted = false;
     public override void CompleteEvent( ) {
 
-        m_completed = true;
     }
 
-    private void Update( ) {
-    }
 
     private void OnTriggerEnter(Collider other) {
+        eyeScanner.Play();
         if(other.tag == "EyeKey" ) {
-            CompleteEvent();
+            m_completed = true;
+
         }
     }
 }
