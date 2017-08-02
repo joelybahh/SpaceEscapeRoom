@@ -11,7 +11,7 @@ public class SE_Vibration : MonoBehaviour
     public float shake_intensity = .3f;
 
     private float temp_shake_intensity = 0;
-    bool isVibrateOn;
+    public bool isVibrateOn;
 
 
     void Update()
@@ -19,8 +19,9 @@ public class SE_Vibration : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             isVibrateOn = !isVibrateOn;
+            Shake();
         }
-        if (temp_shake_intensity > 0)
+        if (temp_shake_intensity > 0 && isVibrateOn)
         {
             transform.position = originPosition + Random.insideUnitSphere * temp_shake_intensity;
             transform.rotation = new Quaternion(
@@ -28,7 +29,6 @@ public class SE_Vibration : MonoBehaviour
                 originRotation.y + Random.Range(-temp_shake_intensity, temp_shake_intensity) * .2f,
                 originRotation.z + Random.Range(-temp_shake_intensity, temp_shake_intensity) * .2f,
                 originRotation.w + Random.Range(-temp_shake_intensity, temp_shake_intensity) * .2f);
-            temp_shake_intensity -= shake_decay;
         }
     }
 
