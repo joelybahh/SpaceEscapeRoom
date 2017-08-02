@@ -6,6 +6,8 @@ public class SE_PuzzleEvent : MonoBehaviour {
 
     [SerializeField]
     protected bool m_completed = false;
+    AudioClip Announcement;
+
     public bool Completed
     {
         get
