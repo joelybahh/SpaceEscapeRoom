@@ -27,12 +27,12 @@ public class SE_TabletTouch : MonoBehaviour {
                 }
             case SE_TabletScreenState.eScreenState.CAMERA_APP: {
                     if (other.tag == "SwapCamera") {
-                        SE_CameraScreen cameraScreen = other.transform.parent.parent.GetComponent<SE_CameraScreen>();
+                        SE_CameraScreen cameraScreen = other.transform.parent.GetComponent<SE_CameraScreen>();
                         cameraScreen.SwapCamera();
                     } else if (other.tag == "HomeScreen") {
                         SE_TabletScreenState.SwapToState(SE_TabletScreenState.eScreenState.HOME_SCREEN);
                     } else if (other.tag == "TakePhoto") {
-                        SE_CameraScreen cameraScreen = other.transform.parent.parent.GetComponent<SE_CameraScreen>();
+                        SE_CameraScreen cameraScreen = other.transform.parent.GetComponent<SE_CameraScreen>();
                         StartCoroutine(cameraScreen.TakePhoto());
                     }
                     break;
