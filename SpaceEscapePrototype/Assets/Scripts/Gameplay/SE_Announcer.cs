@@ -39,7 +39,7 @@ public class SE_Announcer : MonoBehaviour {
 
         // if there is an announcement in the queue, play it
         if (m_curAnnouncementsQ.Count > 0 && !m_isPlayingAnnouncement) {
-            PlayAnouncement();
+            PlayAnouncement(); 
         }
     }
 
