@@ -48,39 +48,23 @@ public class SE_CameraScreen : MonoBehaviour {
 
 
     public IEnumerator TakePhoto() {
-        /* TODO: Read in color buffer from active render texture
-                 Save to a new texture
-                 Instantiate Quad / paper
-                 Add Material Component
-                 Set Texture of that component to the new texture we created
-                 Print */
-
-        // Required as rendering logic happens at the end of frame,
-        // without this you will get an error.
 
         yield return new WaitForEndOfFrame();
 
+        RenderTexture.active = m_activeRendText; // one camera is only ever rendering in a scene at once
+                                                 // therefore, for this frame I have to update the active render texture,
+                                                 // in order to be taking the correct photo.
 
-        //RenderTexture rt = new RenderTexture(Screen.width, Screen.height, 24);
-        //m_activeCamera.targetTexture = rt;
-        //m_activeCamera.Render();
-        //RenderTexture.active = rt;
-
-
-
-        RenderTexture.active = m_activeRendText;
         Texture2D photoText = new Texture2D(m_activeRendText.width, m_activeRendText.height, TextureFormat.RGB24, false);
         photoText.ReadPixels(new Rect(0, 0, m_activeRendText.width, m_activeRendText.height), 0, 0);
         photoText.Apply();
 
-        //m_activeCamera.targetTexture = null;
-        //RenderTexture.active = null; // added to avoid errors 
-        //DestroyImmediate(rt);
-
+        PrintPhoto(photoText);
 
         m_outputFrame.material.mainTexture = photoText;
+    }
 
-
+    void PrintPhoto(Texture2D a_photoText) {
 
     }
 }
