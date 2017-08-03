@@ -12,6 +12,7 @@ TagManager:
   - TakePhoto
   - EyeKey
   - UnfoldScanner
+  - Teleportable
   layers:
   - Default
   - TransparentFX

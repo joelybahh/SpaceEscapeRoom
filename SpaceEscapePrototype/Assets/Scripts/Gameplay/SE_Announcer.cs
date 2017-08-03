@@ -6,7 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(SE_OxygenTimer))]
 public class SE_Announcer : MonoBehaviour {
 
-    [SerializeField] private List<SE_Announcement> m_timedAnnouncements;
+    [SerializeField] private List<SE_Announcement> m_timedAnnouncements = new List<SE_Announcement>();
 
     private Queue<SE_Announcement> m_curAnnouncementsQ;
     private SE_OxygenTimer m_o2Timer;
@@ -16,7 +16,6 @@ public class SE_Announcer : MonoBehaviour {
     void Start() {
         m_o2Timer = GetComponent<SE_OxygenTimer>();
         m_audioSource = GetComponent<AudioSource>();
-        m_timedAnnouncements = new List<SE_Announcement>();
         m_curAnnouncementsQ = new Queue<SE_Announcement>();
     }
 
@@ -32,13 +31,16 @@ public class SE_Announcer : MonoBehaviour {
                 // check if the seconds are also the same
                 if ((int)m_timedAnnouncements[i].Seconds == (int)m_o2Timer.m_o2Clock.Seconds) {
                     // if so add it to the queue
-                    AddAnnouncementToQueue(m_timedAnnouncements[i]);
+                    if(!m_curAnnouncementsQ.Contains(m_timedAnnouncements[i]) && !m_timedAnnouncements[i].HasPlayed) AddAnnouncementToQueue(m_timedAnnouncements[i]);
+                    m_timedAnnouncements[i].HasPlayed = true;
+                    break;
                 }
             }
         }
 
         // if there is an announcement in the queue, play it
         if (m_curAnnouncementsQ.Count > 0 && !m_isPlayingAnnouncement) {
+            Debug.Log("Count" + m_curAnnouncementsQ.Count);
             PlayAnouncement(); 
         }
     }
