@@ -149,6 +149,7 @@ public class SteamVR_Teleporter : MonoBehaviour
 
             if (hasGroundTarget)
             {
+                GetComponent<SteamVR_LaserPointer>().enabled = true;
                 // Get the current Camera (head) position on the ground relative to the world
                 Vector3 headPosOnGround = new Vector3(SteamVR_Render.Top().head.position.x, refY, SteamVR_Render.Top().head.position.z);
 
@@ -157,6 +158,8 @@ public class SteamVR_Teleporter : MonoBehaviour
                 // i.e. intersectionPoint - headPosOnGround = translateVector
                 // currentReferencePosition + translateVector = finalPosition
                 t.position = t.position + (ray.origin + (ray.direction * dist)) - headPosOnGround;
+            } else {
+                GetComponent<SteamVR_LaserPointer>().enabled = false;
             }
         }
     }

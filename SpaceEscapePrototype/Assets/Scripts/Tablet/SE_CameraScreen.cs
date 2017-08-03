@@ -62,8 +62,6 @@ public class SE_CameraScreen : MonoBehaviour {
         photoText.Apply();
 
         PrintPhoto(photoText);
-
-        //m_outputFrame.material.mainTexture = photoText;
     }
 
     void PrintPhoto(Texture2D a_photoText) {
