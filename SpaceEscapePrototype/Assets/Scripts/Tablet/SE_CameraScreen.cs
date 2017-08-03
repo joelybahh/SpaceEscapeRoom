@@ -12,9 +12,12 @@ public class SE_CameraScreen : MonoBehaviour {
     [SerializeField] private RenderTexture m_frontTex;
     [SerializeField] private RenderTexture m_backTex;
 
-    [Header("Material Settings")]
+    [Header("Camera Material Settings")]
     [SerializeField] private MeshRenderer m_cameraScreen;
-    [SerializeField] private MeshRenderer m_outputFrame;
+
+    [Header("Paper Print Settings")]
+    [SerializeField] private Transform paperSpawnPoint;
+    [SerializeField] private GameObject paperToSpawn;
 
     private Camera m_activeCamera;
     private RenderTexture m_activeRendText;
@@ -54,17 +57,17 @@ public class SE_CameraScreen : MonoBehaviour {
         RenderTexture.active = m_activeRendText; // one camera is only ever rendering in a scene at once
                                                  // therefore, for this frame I have to update the active render texture,
                                                  // in order to be taking the correct photo.
-
         Texture2D photoText = new Texture2D(m_activeRendText.width, m_activeRendText.height, TextureFormat.RGB24, false);
         photoText.ReadPixels(new Rect(0, 0, m_activeRendText.width, m_activeRendText.height), 0, 0);
         photoText.Apply();
 
         PrintPhoto(photoText);
 
-        m_outputFrame.material.mainTexture = photoText;
+        //m_outputFrame.material.mainTexture = photoText;
     }
 
     void PrintPhoto(Texture2D a_photoText) {
-
+        GameObject p = Instantiate(paperToSpawn, paperSpawnPoint.position, paperSpawnPoint.rotation);
+        p.GetComponent<MeshRenderer>().material.mainTexture = a_photoText;
     }
 }

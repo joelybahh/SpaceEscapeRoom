@@ -12,6 +12,25 @@ public class SE_PuzzleEyeScanner : SE_PuzzleEvent {
     bool hasCompleted = false;
     float scanTimer = 0;
 
+    Animator m_unfoldController;
+
+    bool m_isInUnfoldZone = false;
+
+    void Start()
+    {
+        m_unfoldController = GetComponent<Animator>();
+    }
+
+    void Update()
+    {
+        if(m_isInUnfoldZone)
+        {
+
+        } else {
+
+        }
+    }
+
     public override void CompleteEvent( ) {
         base.CompleteEvent();
         SE_PuzzleEventHandler.Instance.Announcer.AddAnnouncementToQueue(m_announcement);
@@ -23,24 +42,31 @@ public class SE_PuzzleEyeScanner : SE_PuzzleEvent {
 
         if (other.tag == "EyeKey") {
             m_completed = true;
+            m_unfoldController.SetTrigger("Unfold");
+            m_isInUnfoldZone = true;
         }
     }
 
     private void OnTriggerStay(Collider other) {
+
+
          if(other.tag == "EyeKey") {
             scanTimer += Time.deltaTime;
             if(scanTimer > 2.0f) {
                 m_completed = true;
-                m_controller.SetTrigger("HasScannedEye");
+                m_controller.SetTrigger("doorOpen");
             }
         }
 
     }
 
     private void OnTriggerExit(Collider other) {
-        m_eyeScanner.Stop();
+        m_eyeScanner.Stop();       
+
         if (other.tag == "EyeKey") {
             scanTimer = 0;
+            m_unfoldController.SetTrigger("Refold");
+            m_isInUnfoldZone = false;
         }
     }
 

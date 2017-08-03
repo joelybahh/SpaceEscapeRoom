@@ -11,6 +11,7 @@ TagManager:
   - SwapCamera
   - TakePhoto
   - EyeKey
+  - UnfoldScanner
   layers:
   - Default
   - TransparentFX
