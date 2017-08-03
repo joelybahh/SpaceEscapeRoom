@@ -26,7 +26,7 @@ public class SE_CameraScreen : MonoBehaviour {
     private RenderTexture m_activeRendText;
     private bool m_isBackCam;
     private int m_photosTaken;
-    
+    private string m_photoTag;
     public int PhotosTaken { get { return m_photosTaken; } }
 
 
@@ -61,7 +61,14 @@ public class SE_CameraScreen : MonoBehaviour {
     public IEnumerator TakePhoto() {
 
         yield return new WaitForEndOfFrame();
-
+        Ray ray;
+        RaycastHit hit;
+        if(Physics.Raycast(m_activeCamera.transform.position, Vector3.forward, out hit, 100.0f))
+        {
+            Debug.Log(hit.collider.tag);
+            Debug.DrawRay(m_activeCamera.ScreenToWorldPoint(m_activeCamera.transform.position), Vector3.forward, Color.cyan, 100.0f);
+            m_photoTag = hit.collider.tag;
+        }
         RenderTexture.active = m_activeRendText; // one camera is only ever rendering in a scene at once
                                                  // therefore, for this frame I have to update the active render texture,
                                                  // in order to be taking the correct photo.
@@ -79,5 +86,6 @@ public class SE_CameraScreen : MonoBehaviour {
         //TODO: Fix printing, or keep the photos just dropping to the floor? :P
         GameObject p = Instantiate(paperToSpawn, paperSpawnPoint.position, paperSpawnPoint.rotation);
         p.GetComponent<MeshRenderer>().material.mainTexture = a_photoText;
+        p.tag = m_photoTag;
     }
 }
