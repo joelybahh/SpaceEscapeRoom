@@ -1,12 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SE_CameraScreen : MonoBehaviour {
 
     [Header("Camera Settings")]
     [SerializeField] private Camera m_frontCamera;
     [SerializeField] private Camera m_backCamera;
+    [SerializeField] private int m_maxPhotos;
+    [SerializeField] private Text m_photoT;
 
     [Header("Render Texture Settings")]
     [SerializeField] private RenderTexture m_frontTex;
@@ -22,7 +25,11 @@ public class SE_CameraScreen : MonoBehaviour {
     private Camera m_activeCamera;
     private RenderTexture m_activeRendText;
     private bool m_isBackCam;
+    private int m_photosTaken;
     
+    public int PhotosTaken { get { return m_photosTaken; } }
+
+
 	void Start () {
         m_isBackCam = true;
         m_activeRendText = m_backTex;
@@ -42,7 +49,8 @@ public class SE_CameraScreen : MonoBehaviour {
             m_activeRendText = m_frontTex;
             m_activeCamera = m_frontCamera;
         }
-        
+
+        m_photoT.text = m_photosTaken + "/5 photos taken";
     }
 
     public void SwapCamera() {
@@ -62,6 +70,7 @@ public class SE_CameraScreen : MonoBehaviour {
         photoText.Apply();
 
         PrintPhoto(photoText);
+        m_photosTaken++;
 
         //m_outputFrame.material.mainTexture = photoText;
     }

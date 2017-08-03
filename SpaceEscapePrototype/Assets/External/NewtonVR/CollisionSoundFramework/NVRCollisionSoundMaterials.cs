@@ -16,7 +16,7 @@ namespace NewtonVR
         plastic,
         cardboard,
         EndNewtonVRMaterials = 50, //your custom collision sound materials go below here. That way if NewtonVR adds more we don't overwrite yours.
-
+        tablet,
 
     }
 

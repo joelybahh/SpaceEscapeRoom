@@ -35,8 +35,8 @@ public class SteamVR_Teleporter : MonoBehaviour
             trackedController = gameObject.AddComponent<SteamVR_TrackedController>();
         }
 
-        trackedController.TriggerClicked += new ClickedEventHandler(DoClick);
-        trackedController.TriggerUnclicked += new ClickedEventHandler(DoReleaseClick);
+        trackedController.PadClicked += new ClickedEventHandler(DoClick);
+        trackedController.PadUnclicked += new ClickedEventHandler(DoReleaseClick);
         if (teleportType == TeleportType.TeleportTypeUseTerrain)
         {
             // Start the player at the level of the terrain

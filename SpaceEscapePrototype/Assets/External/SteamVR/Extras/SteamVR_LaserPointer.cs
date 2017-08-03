@@ -136,6 +136,6 @@ public class SteamVR_LaserPointer : MonoBehaviour
     }
     public void ToggleLaser(bool aBool)
     {
-        transform.GetChild(0).gameObject.SetActive(aBool);
+        transform.GetChild(1).gameObject.SetActive(aBool);
     }
 }
