@@ -57,7 +57,7 @@ public class SE_CameraScreen : MonoBehaviour {
         RenderTexture.active = m_activeRendText; // one camera is only ever rendering in a scene at once
                                                  // therefore, for this frame I have to update the active render texture,
                                                  // in order to be taking the correct photo.
-        Texture2D photoText = new Texture2D(m_activeRendText.width, m_activeRendText.height, TextureFormat.RGB24, false);
+        Texture2D photoText = new Texture2D(m_activeRendText.width, m_activeRendText.height, TextureFormat.ARGB32, false);
         photoText.ReadPixels(new Rect(0, 0, m_activeRendText.width, m_activeRendText.height), 0, 0);
         photoText.Apply();
 
@@ -67,6 +67,7 @@ public class SE_CameraScreen : MonoBehaviour {
     }
 
     void PrintPhoto(Texture2D a_photoText) {
+        //TODO: Fix printing, or keep the photos just dropping to the floor? :P
         GameObject p = Instantiate(paperToSpawn, paperSpawnPoint.position, paperSpawnPoint.rotation);
         p.GetComponent<MeshRenderer>().material.mainTexture = a_photoText;
     }
