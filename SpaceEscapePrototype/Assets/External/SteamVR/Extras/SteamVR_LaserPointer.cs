@@ -79,11 +79,7 @@ public class SteamVR_LaserPointer : MonoBehaviour
     // Update is called once per frame
 	void Update ()
     {
-        if (!isActive)
-        {
-            isActive = true;
-            this.transform.GetChild(0).gameObject.SetActive(true);
-        }
+
 
         float dist = 100f;
 
@@ -137,5 +133,9 @@ public class SteamVR_LaserPointer : MonoBehaviour
             pointer.transform.localScale = new Vector3(thickness, thickness, dist);
         }
         pointer.transform.localPosition = new Vector3(0f, 0f, dist/2f);
+    }
+    public void ToggleLaser(bool aBool)
+    {
+        transform.GetChild(0).gameObject.SetActive(aBool);
     }
 }

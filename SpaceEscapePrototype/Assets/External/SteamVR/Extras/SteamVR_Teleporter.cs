@@ -15,6 +15,8 @@ public class SteamVR_Teleporter : MonoBehaviour
     public bool teleportOnRelease = false;
     public TeleportType teleportType = TeleportType.TeleportTypeUseZeroY;
     public string teleportTag = "";
+    SteamVR_LaserPointer steamVrLaser;
+
     Transform reference
     {
         get
@@ -26,6 +28,7 @@ public class SteamVR_Teleporter : MonoBehaviour
 
     void Start()
     {
+        steamVrLaser = GetComponent<SteamVR_LaserPointer>();
         var trackedController = GetComponent<SteamVR_TrackedController>();
         if (trackedController == null)
         {
@@ -95,7 +98,10 @@ public class SteamVR_Teleporter : MonoBehaviour
                 t.position = t.position + (ray.origin + (ray.direction * dist)) - headPosOnGround;
             }
         }
-
+        if (teleportOnRelease)
+        {
+            steamVrLaser.ToggleLaser(true);
+        }
     }
     void DoReleaseClick(object sender, ClickedEventArgs e)
     {
@@ -158,6 +164,8 @@ public class SteamVR_Teleporter : MonoBehaviour
                 // currentReferencePosition + translateVector = finalPosition
                 t.position = t.position + (ray.origin + (ray.direction * dist)) - headPosOnGround;
             }
+            steamVrLaser.ToggleLaser(false);
+
         }
     }
 }
