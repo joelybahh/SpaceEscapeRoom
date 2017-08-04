@@ -164,8 +164,6 @@ public class SteamVR_Teleporter : MonoBehaviour
                 // i.e. intersectionPoint - headPosOnGround = translateVector
                 // currentReferencePosition + translateVector = finalPosition
                 t.position = t.position + (ray.origin + (ray.direction * dist)) - headPosOnGround;
-            } else {
-                GetComponent<SteamVR_LaserPointer>().enabled = false;
             }
             steamVrLaser.ToggleLaser(false);
 
