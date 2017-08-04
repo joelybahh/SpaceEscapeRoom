@@ -4,10 +4,30 @@ using UnityEngine;
 
 public class SE_LockScreen : MonoBehaviour {
 
-    [SerializeField]
-    private UnityEngine.UI.Text m_inputField;
-    [SerializeField]
+    [SerializeField] private UnityEngine.UI.Text m_inputField;
     private string m_passcode = "1234";
+
+    [SerializeField] private UnityEngine.UI.Text m_puzzlePieceOne;
+    [SerializeField] private UnityEngine.UI.Text m_puzzlePieceTwo;
+    [SerializeField] private UnityEngine.UI.Text m_puzzlePieceThree;
+    [SerializeField] private UnityEngine.UI.Text m_puzzlePieceFour;
+
+    void Start() {
+        int firstNum = Random.Range(0,9);
+        int secondNum = Random.Range(0, 9);
+        int thirdNum = Random.Range(0, 9);
+        int fourthNum = Random.Range(0, 9);
+
+        m_puzzlePieceOne.text = firstNum.ToString();
+        m_puzzlePieceTwo.text = secondNum.ToString();
+        m_puzzlePieceThree.text = thirdNum.ToString();
+        m_puzzlePieceFour.text = fourthNum.ToString();
+
+        m_passcode = m_puzzlePieceOne.text + 
+                     m_puzzlePieceTwo.text + 
+                     m_puzzlePieceThree.text + 
+                     m_puzzlePieceFour.text;
+    }
 
     public void UpdateLockScreen(Collider a_other, string a_buttonTag){
         if (a_other.tag == a_buttonTag) {

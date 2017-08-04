@@ -24,6 +24,5 @@ C:\Users\s171295\Documents\Version Control\Unity Projects\SpaceEscapePrototype\T
 C:\Users\s171295\Documents\Version Control\Unity Projects\SpaceEscapePrototype\Temp\bin\Debug\UnityEngine.Analytics.xml
 C:\Users\s171295\Documents\Version Control\Unity Projects\SpaceEscapePrototype\Temp\bin\Debug\UnityEngine.HoloLens.xml
 C:\Users\s171295\Documents\Version Control\Unity Projects\SpaceEscapePrototype\Temp\bin\Debug\UnityEngine.VR.xml
-C:\Users\s171295\Documents\Version Control\Unity Projects\SpaceEscapePrototype\obj\Debug\Assembly-CSharp-firstpass.csprojResolveAssemblyReference.cache
 C:\Users\s171295\Documents\Version Control\Unity Projects\SpaceEscapePrototype\obj\Debug\Assembly-CSharp-firstpass.dll
 C:\Users\s171295\Documents\Version Control\Unity Projects\SpaceEscapePrototype\obj\Debug\Assembly-CSharp-firstpass.pdb

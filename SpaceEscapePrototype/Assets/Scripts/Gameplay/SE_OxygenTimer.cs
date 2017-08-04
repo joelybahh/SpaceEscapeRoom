@@ -22,7 +22,7 @@ public class SE_OxygenTimer : MonoBehaviour {
 	void Update () {
 		if(!m_o2Clock.HasFinished) {
             m_minT.text = "Minutes: " + m_o2Clock.Minutes;
-            m_secT.text = "Seconds: " + m_o2Clock.Seconds;
+            m_secT.text = "Seconds: " + (int)m_o2Clock.Seconds;
 
             m_o2Clock.Countdown(Time.deltaTime);
         } else {

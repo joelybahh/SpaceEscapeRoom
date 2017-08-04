@@ -46,14 +46,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\External\NewtonVR\CollisionSoundFramework\Editor\NVRCollisionSoundControllerEditor.cs" />
-     <Compile Include="Assets\External\NewtonVR\Editor\NVRPlayerEditor.cs" />
-     <Compile Include="Assets\External\SteamVR\Editor\SteamVR_Editor.cs" />
-     <Compile Include="Assets\External\SteamVR\Editor\SteamVR_Preferences.cs" />
-     <Compile Include="Assets\External\SteamVR\Editor\SteamVR_RenderModelEditor.cs" />
-     <Compile Include="Assets\External\SteamVR\Editor\SteamVR_Settings.cs" />
-     <Compile Include="Assets\External\SteamVR\Editor\SteamVR_SkyboxEditor.cs" />
-     <Compile Include="Assets\External\SteamVR\Editor\SteamVR_Update.cs" />
+     <Compile Include="Assets\Editor\NVRCollisionSoundControllerEditor.cs" />
+     <Compile Include="Assets\Editor\NVRPlayerEditor.cs" />
+     <Compile Include="Assets\Editor\SteamVR_Editor.cs" />
+     <Compile Include="Assets\Editor\SteamVR_Preferences.cs" />
+     <Compile Include="Assets\Editor\SteamVR_RenderModelEditor.cs" />
+     <Compile Include="Assets\Editor\SteamVR_Settings.cs" />
+     <Compile Include="Assets\Editor\SteamVR_SkyboxEditor.cs" />
+     <Compile Include="Assets\Editor\SteamVR_Update.cs" />
      <None Include="Assets\External\SteamVR\Resources\SteamVR_Fade.shader" />
      <None Include="Assets\External\SteamVR\Resources\SteamVR_BlitFlip.shader" />
      <None Include="Assets\External\SteamVR\Resources\SteamVR_ClearAll.shader" />
