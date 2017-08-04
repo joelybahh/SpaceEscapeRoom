@@ -23,7 +23,7 @@ public class SE_PuzzleEyeScanner : SE_PuzzleEvent {
 
     private AudioClip m_announcement;
     private bool m_hasCompleted = false;
-    private float m_scanTimer = 0;
+    [SerializeField] private float m_scanTimer = 0;
     private Animator m_unfoldController;
 
     bool m_isInUnfoldZone = false;
@@ -57,7 +57,12 @@ public class SE_PuzzleEyeScanner : SE_PuzzleEvent {
     }
 
     private void OnTriggerStay(Collider other)  {
-        if (IsLookingAtScanner(m_headTransform, m_scannerTransform)){
+        if (IsLookingAtScanner(m_headTransform, m_scannerTransform))
+        {
+            if(other.tag != "EyeKey" && other.tag != "Player") {
+                return;
+            }
+
             m_scanTimer += Time.deltaTime;
 
             #region hide your eyes
