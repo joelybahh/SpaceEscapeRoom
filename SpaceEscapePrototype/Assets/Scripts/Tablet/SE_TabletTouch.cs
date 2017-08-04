@@ -17,7 +17,9 @@ public class SE_TabletTouch : MonoBehaviour {
     }
 
     void Update() {
-        if(m_intItem.AttachedHands.Count > 0) m_activeHand = m_intItem.AttachedHands[0];
+        if (m_intItem.AttachedHands.Count > 0)
+            m_activeHand = m_intItem.AttachedHands[0];
+        else m_activeHand = null; 
     }
 
     void OnTriggerEnter(Collider col) {
