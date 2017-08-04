@@ -9,6 +9,7 @@ public class SE_CameraScreen : MonoBehaviour {
     [SerializeField] private Camera m_frontCamera;
     [SerializeField] private Camera m_backCamera;
     [SerializeField] private int m_maxPhotos;
+    [SerializeField] private float m_minDistToKeyItem;
     [SerializeField] private Text m_photoT;
 
     [Header("Render Texture Settings")]
@@ -37,8 +38,7 @@ public class SE_CameraScreen : MonoBehaviour {
 	}
 
 	void Update () {
-        
-        if(m_isBackCam) {
+        if (m_isBackCam) {
             // Set render tcture to be the back texture
             m_cameraScreen.material.mainTexture = m_backTex;
             m_activeRendText = m_backTex;
@@ -61,14 +61,15 @@ public class SE_CameraScreen : MonoBehaviour {
     public IEnumerator TakePhoto() {
 
         yield return new WaitForEndOfFrame();
-        Ray ray;
         RaycastHit hit;
-        if(Physics.Raycast(m_activeCamera.transform.position, Vector3.forward, out hit, 100.0f))
-        {
-            Debug.Log(hit.collider.tag);
-            Debug.DrawRay(m_activeCamera.ScreenToWorldPoint(m_activeCamera.transform.position), Vector3.forward, Color.cyan, 100.0f);
-            m_photoTag = hit.collider.tag;
-        }
+        if(Physics.Raycast(m_activeCamera.transform.position, m_activeCamera.transform.forward, out hit, m_minDistToKeyItem)) {
+            Debug.DrawRay(m_activeCamera.transform.position, m_activeCamera.transform.forward * m_minDistToKeyItem, Color.red, 2);
+            if (hit.collider != null) {
+                Debug.Log(hit.collider.tag);
+                Debug.DrawRay(m_activeCamera.transform.position, m_activeCamera.transform.forward * m_minDistToKeyItem, Color.cyan, 2);
+                m_photoTag = hit.collider.tag;
+            }
+        } 
         RenderTexture.active = m_activeRendText; // one camera is only ever rendering in a scene at once
                                                  // therefore, for this frame I have to update the active render texture,
                                                  // in order to be taking the correct photo.
