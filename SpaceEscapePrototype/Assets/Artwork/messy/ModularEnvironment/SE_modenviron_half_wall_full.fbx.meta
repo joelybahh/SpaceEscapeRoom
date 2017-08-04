@@ -1,17 +1,15 @@
 fileFormatVersion: 2
-guid: 21e68ab80b2f6e848b964e4f3bfee122
-timeCreated: 1501812737
+guid: 81535c94989ced84e9add16e84b51a0f
+timeCreated: 1501821185
 licenseType: Pro
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: polySurface231
-    100002: //RootNode
-    400000: polySurface231
-    400002: //RootNode
-    2300000: polySurface231
-    3300000: polySurface231
-    4300000: polySurface231
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: SE_modenviron_half_wall_full_geo
   materials:
     importMaterials: 1
     materialName: 0

@@ -1,17 +1,15 @@
 fileFormatVersion: 2
-guid: 61cd20799c1e4ba47876e262a83cc663
-timeCreated: 1501812733
+guid: bca8229c61bbda54caf8fda41013fcfc
+timeCreated: 1501821185
 licenseType: Pro
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: polySurface287
-    100002: //RootNode
-    400000: polySurface287
-    400002: //RootNode
-    2300000: polySurface287
-    3300000: polySurface287
-    4300000: polySurface287
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: SE_modenviron_half_wall_cavity_geo
   materials:
     importMaterials: 1
     materialName: 0
