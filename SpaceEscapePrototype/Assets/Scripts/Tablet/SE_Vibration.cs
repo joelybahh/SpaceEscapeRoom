@@ -10,17 +10,20 @@ public class SE_Vibration : MonoBehaviour
     public float shake_decay = 0.002f;
     public float shake_intensity = .3f;
 
+    private AudioSource m_audioSource;
     private float temp_shake_intensity = 0;
     public bool isVibrateOn;
 
+    void Start()
+    {
+        m_audioSource = GetComponent<AudioSource>();
+        isVibrateOn = true;
+    }
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            isVibrateOn = !isVibrateOn;
-            Shake();
-        }
+        Shake();
+        
         if (temp_shake_intensity > 0 && isVibrateOn)
         {
             transform.position = originPosition + Random.insideUnitSphere * temp_shake_intensity;
@@ -37,6 +40,12 @@ public class SE_Vibration : MonoBehaviour
         originPosition = transform.position;
         originRotation = transform.rotation;
         temp_shake_intensity = shake_intensity;
+    }
 
+    public void StopShakeOnInteract() {
+        isVibrateOn = false;
+        m_audioSource.Stop();
+        m_audioSource.enabled = false;
+        this.enabled = false;
     }
 }
