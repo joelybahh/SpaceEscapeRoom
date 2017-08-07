@@ -180,6 +180,7 @@
      <Compile Include="Assets\Scripts\Gameplay\SE_Announcement.cs" />
      <Compile Include="Assets\Scripts\Gameplay\SE_Announcer.cs" />
      <Compile Include="Assets\Scripts\Gameplay\SE_Clock.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\SE_DisableTutText.cs" />
      <Compile Include="Assets\Scripts\Gameplay\SE_OxygenTimer.cs" />
      <Compile Include="Assets\Scripts\Gameplay\SE_PuzzleEvent.cs" />
      <Compile Include="Assets\Scripts\Gameplay\SE_PuzzleEventHandler.cs" />
