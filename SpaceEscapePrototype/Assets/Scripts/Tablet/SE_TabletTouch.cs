@@ -52,7 +52,13 @@ public class SE_TabletTouch : MonoBehaviour {
                     }
                     break;
                 }
-            case SE_TabletScreenState.eScreenState.NOTES_APP: break;
+            case SE_TabletScreenState.eScreenState.NOTES_APP: {
+                    if (col.tag == "HomeScreen") {
+                        SE_TabletScreenState.SwapToState(SE_TabletScreenState.eScreenState.HOME_SCREEN);
+                    }
+                    break;
+                }
+                
         }
         
     } 
