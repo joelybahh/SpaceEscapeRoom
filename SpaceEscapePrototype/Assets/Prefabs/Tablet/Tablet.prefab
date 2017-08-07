@@ -3055,7 +3055,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_inputField: {fileID: 114814023683704632}
-  m_passcode: 1234
+  m_puzzlePieceOne: {fileID: 0}
+  m_puzzlePieceTwo: {fileID: 0}
+  m_puzzlePieceThree: {fileID: 0}
+  m_puzzlePieceFour: {fileID: 0}
 --- !u!114 &114589646907724998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3683,10 +3686,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_frontCamera: {fileID: 20028708477030040}
   m_backCamera: {fileID: 20762459686232306}
+  m_maxPhotos: 0
+  m_minDistToKeyItem: 0
+  m_photoT: {fileID: 0}
   m_frontTex: {fileID: 8400000, guid: 1a2961f7fa133b6409a9a6b83105e111, type: 2}
   m_backTex: {fileID: 8400000, guid: 507300ddb31c1634aab9e9738d8d22a3, type: 2}
   m_cameraScreen: {fileID: 23473275032041962}
-  m_outputFrame: {fileID: 0}
+  paperSpawnPoint: {fileID: 0}
+  paperToSpawn: {fileID: 0}
 --- !u!114 &114915144701271274
 MonoBehaviour:
   m_ObjectHideFlags: 1

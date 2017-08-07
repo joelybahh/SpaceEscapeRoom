@@ -204,6 +204,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_completed: 0
+  m_onCompleteEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
+  m_eyeScanner: {fileID: 0}
+  m_controller: {fileID: 0}
+  m_headTransform: {fileID: 0}
+  m_scannerTransform: {fileID: 0}
+  m_eyeScanePhaseOne: {fileID: 0}
+  m_eyeScanePhaseTwo: {fileID: 0}
+  m_eyeScanePhaseThree: {fileID: 0}
+  m_accessGranted: {fileID: 0}
+  m_accessDenied: {fileID: 0}
+  m_scanTimer: 0
 --- !u!135 &135848668746395262
 SphereCollider:
   m_ObjectHideFlags: 1

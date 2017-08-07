@@ -265,6 +265,12 @@ MonoBehaviour:
   m_controller: {fileID: 0}
   m_headTransform: {fileID: 0}
   m_scannerTransform: {fileID: 4034745859067082}
+  m_eyeScanePhaseOne: {fileID: 0}
+  m_eyeScanePhaseTwo: {fileID: 0}
+  m_eyeScanePhaseThree: {fileID: 0}
+  m_accessGranted: {fileID: 0}
+  m_accessDenied: {fileID: 0}
+  m_scanTimer: 0
 --- !u!135 &135767635734852490
 SphereCollider:
   m_ObjectHideFlags: 1

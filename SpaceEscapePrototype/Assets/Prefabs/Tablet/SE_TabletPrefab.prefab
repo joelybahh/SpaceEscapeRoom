@@ -2349,6 +2349,7 @@ MonoBehaviour:
   m_frontCamera: {fileID: 20946628979311658}
   m_backCamera: {fileID: 20635180295228214}
   m_maxPhotos: 5
+  m_minDistToKeyItem: 0
   m_photoT: {fileID: 114768313976449422}
   m_frontTex: {fileID: 8400000, guid: 1a2961f7fa133b6409a9a6b83105e111, type: 2}
   m_backTex: {fileID: 8400000, guid: 507300ddb31c1634aab9e9738d8d22a3, type: 2}
@@ -2368,7 +2369,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_inputField: {fileID: 114645305130188428}
-  m_passcode: 1234
+  m_puzzlePieceOne: {fileID: 0}
+  m_puzzlePieceTwo: {fileID: 0}
+  m_puzzlePieceThree: {fileID: 0}
+  m_puzzlePieceFour: {fileID: 0}
 --- !u!114 &114531316706850988
 MonoBehaviour:
   m_ObjectHideFlags: 1
