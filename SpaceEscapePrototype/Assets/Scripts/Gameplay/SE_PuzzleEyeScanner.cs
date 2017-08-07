@@ -81,6 +81,7 @@ public class SE_PuzzleEyeScanner : SE_PuzzleEvent {
                     m_completed = true;
                     m_controller.SetTrigger("doorOpen");
                     GrantAccess(true);
+                    CompleteEvent();
                 }  else if(other.tag == "Player") {
                     m_completed = false;
                     GrantAccess(false);
