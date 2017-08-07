@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 using System.Collections;
 
 public class SteamVR_Teleporter : MonoBehaviour
@@ -15,6 +16,10 @@ public class SteamVR_Teleporter : MonoBehaviour
     public bool teleportOnRelease = false;
     public TeleportType teleportType = TeleportType.TeleportTypeUseZeroY;
     public string teleportTag = "";
+
+    public UnityEvent OnTeleportBegin;
+    public UnityEvent OnTeleportEnd;
+
     SteamVR_LaserPointer steamVrLaser;
 
     Transform reference
@@ -145,6 +150,8 @@ public class SteamVR_Teleporter : MonoBehaviour
                     hasGroundTarget = false;
                 }
                 dist = hitInfo.distance;
+
+                OnTeleportBegin.Invoke();
             }
             else // If we're just staying flat on the current Y axis
             {
@@ -164,6 +171,8 @@ public class SteamVR_Teleporter : MonoBehaviour
                 // i.e. intersectionPoint - headPosOnGround = translateVector
                 // currentReferencePosition + translateVector = finalPosition
                 t.position = t.position + (ray.origin + (ray.direction * dist)) - headPosOnGround;
+
+                OnTeleportEnd.Invoke();
             }
             steamVrLaser.ToggleLaser(false);
 
