@@ -40,4 +40,8 @@ public class SE_Clock {
             }
         }
 	}
+
+    public void Stop() {
+        m_hasFinished = true;
+    }
 }

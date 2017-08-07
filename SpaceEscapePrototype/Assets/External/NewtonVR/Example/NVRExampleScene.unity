@@ -13216,6 +13216,7 @@ Transform:
   - {fileID: 759425827}
   - {fileID: 1662153437}
   - {fileID: 1517552704}
+  - {fileID: 2023536811}
   m_Father: {fileID: 993910791}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -14862,6 +14863,12 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &1342864948 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114146159063603344, guid: d6aff345d37de024fb9db7f08aba0f6b,
+    type: 2}
+  m_PrefabInternal: {fileID: 655164597}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1 &1351467324
 GameObject:
   m_ObjectHideFlags: 0
@@ -16008,6 +16015,23 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!114 &1452402938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1452402931}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 083944361a9ae4141b86ac9d9540eb2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_lifeSupportT: {fileID: 557509178}
+  m_o2Timer: {fileID: 2020080696}
+  m_countdownMinT: {fileID: 1342864948}
+  m_countdownSecT: {fileID: 1819519294}
+  m_playerTrans: {fileID: 1252181562}
+  m_playerWinTrans: {fileID: 2023536811}
 --- !u!1001 &1462908110
 Prefab:
   m_ObjectHideFlags: 0
@@ -18757,6 +18781,12 @@ Transform:
   m_PrefabParentObject: {fileID: 4000010553649410, guid: 008e074500f780b438c7fe39166bca1a,
     type: 2}
   m_PrefabInternal: {fileID: 1804598161}
+--- !u!114 &1819519294 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114070280794746044, guid: d6aff345d37de024fb9db7f08aba0f6b,
+    type: 2}
+  m_PrefabInternal: {fileID: 655164597}
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1819960862
 Prefab:
   m_ObjectHideFlags: 0
@@ -19894,6 +19924,40 @@ Transform:
   m_PrefabParentObject: {fileID: 4000010553649410, guid: 008e074500f780b438c7fe39166bca1a,
     type: 2}
   m_PrefabInternal: {fileID: 2017282931}
+--- !u!114 &2020080696 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114219717703362864, guid: d6aff345d37de024fb9db7f08aba0f6b,
+    type: 2}
+  m_PrefabInternal: {fileID: 655164597}
+  m_Script: {fileID: 11500000, guid: 4226aa4fe5a389e4da73251a13f2fdcb, type: 3}
+--- !u!1 &2023536810
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2023536811}
+  m_Layer: 0
+  m_Name: PlayerEndSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2023536811
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2023536810}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.713, y: 0, z: 3.286}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1125929862}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2033780757 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 060fd7741ec945b4ab0b23b934ea6583, type: 3}
@@ -20025,7 +20089,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 4.11
-  MinDistance: 0.3299173
+  MinDistance: 0.6713095
   MaxDistance: 5.204467
   Pan2D: 0
   rolloffMode: 2

@@ -187,6 +187,7 @@
      <Compile Include="Assets\Scripts\Gameplay\SE_PuzzleEyeScanner.cs" />
      <Compile Include="Assets\Scripts\Gameplay\SE_TeleportWithItem.cs" />
      <Compile Include="Assets\Scripts\Gameplay\SE_UnlockSecondStage.cs" />
+     <Compile Include="Assets\Scripts\Gameplay\SE_WinGame.cs" />
      <Compile Include="Assets\Scripts\Tablet\SE_CameraScreen.cs" />
      <Compile Include="Assets\Scripts\Tablet\SE_HomeScreen.cs" />
      <Compile Include="Assets\Scripts\Tablet\SE_LockScreen.cs" />
