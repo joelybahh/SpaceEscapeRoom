@@ -1,22 +1,28 @@
 fileFormatVersion: 2
-guid: 54a05125b271e8940975733cbdd6436c
-timeCreated: 1502072762
+guid: c2c804f0407976e4997afd7297535313
+timeCreated: 1502085266
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: SE_Valve_Holster
-    100002: SE_Valve_Prop
-    100004: //RootNode
-    400000: SE_Valve_Holster
-    400002: SE_Valve_Prop
-    400004: //RootNode
-    2300000: SE_Valve_Holster
-    2300002: SE_Valve_Prop
-    3300000: SE_Valve_Holster
-    3300002: SE_Valve_Prop
-    4300000: SE_Valve_Prop
-    4300002: SE_Valve_Holster
+    100000: //RootNode
+    100002: Valve_Cap_Prop_LP
+    100004: Valve_Handle_Prop_LP
+    100006: Valve_Shaft_Prop_LP
+    400000: //RootNode
+    400002: Valve_Cap_Prop_LP
+    400004: Valve_Handle_Prop_LP
+    400006: Valve_Shaft_Prop_LP
+    2300000: Valve_Cap_Prop_LP
+    2300002: Valve_Handle_Prop_LP
+    2300004: Valve_Shaft_Prop_LP
+    3300000: Valve_Cap_Prop_LP
+    3300002: Valve_Handle_Prop_LP
+    3300004: Valve_Shaft_Prop_LP
+    4300000: Valve_Handle_Prop_LP
+    4300002: Valve_Cap_Prop_LP
+    4300004: Valve_Shaft_Prop_LP
+    9500000: //RootNode
   materials:
     importMaterials: 1
     materialName: 0
@@ -79,7 +85,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 0
+  animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
