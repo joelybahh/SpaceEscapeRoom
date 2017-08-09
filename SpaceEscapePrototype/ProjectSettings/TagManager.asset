@@ -13,6 +13,7 @@ TagManager:
   - EyeKey
   - UnfoldScanner
   - Teleportable
+  - TeleportableLocked
   layers:
   - Default
   - TransparentFX

@@ -5,10 +5,10 @@ using UnityEngine;
 public class SE_Floor : MonoBehaviour {
 
 	void UnlockFloor( ) {
-        tag = "UnlockedFloor";
+        tag = "Teleportable";
     }
 
     void LockFloor( ) {
-        tag = "LockedFloor";
+        tag = "TeleportableLocked";
     }
 }
